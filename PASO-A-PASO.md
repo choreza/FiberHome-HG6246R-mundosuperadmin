@@ -62,8 +62,8 @@ En Burp: `Proxy → Match and Replace` → **Add**.
 **Regla 2:**
 
 * Type: Response body
-* Match: \{"result":"1",\s*"user":"0"\}
-* Replace: {"result":"1", "user":"1"}
+* Match: "user":\s*"0"
+* Replace: "user":"1"
 * Regex match: ✅
 
 **Regla 3:**
