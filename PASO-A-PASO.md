@@ -25,7 +25,7 @@
 
 ## Fase 1 — Burp Suite
 
-### 1.1 Configurar Burp
+### 1. Configurar Burp
 
 1. Abrir Burp Suite.
 2. Ir a `Proxy → Settings → Proxy Listeners`.
@@ -33,7 +33,7 @@
 4. Ir a `Proxy → Intercept` y dejar **Intercept is off**.
 5. Abrir el navegador de Burp (`Proxy → Intercept → Open browser`).
 
-### 1.2 Iniciar sesión como usuario básico
+### 1. Iniciar sesión como usuario básico
 
 1. En el navegador, ir a `http://192.168.1.1`.
 2. Iniciar sesión con:
@@ -48,7 +48,7 @@
 
 ## Fase 2 — Modificar respuestas con Burp (Match and Replace)
 
-### 2.1 Añadir 3 reglas cada una en Match and Replace
+### 1. Añadir 3 reglas cada una en Match and Replace
 
 En Burp: `Proxy → Match and Replace` → **Add**.
 
@@ -75,7 +75,7 @@ En Burp: `Proxy → Match and Replace` → **Add**.
 
 ### Debes copiar y pegar exactamente todo después de los dos puntos.
 
-### 2.2 Verificar
+### 2. Verificar
 
 1. Recargar el panel en el navegador.
 2. El panel ahora **muestra los menús de admin** (`Status`, `Network`, `Security`, `Application`, `Management`).
@@ -88,7 +88,7 @@ En Burp: `Proxy → Match and Replace` → **Add**.
 
 ## Fase 3 — Descargar el archivo de configuración
 
-### 3.1 Localizar la opción de descarga
+### 1. Localizar la opción de descarga
 
 Con las reglas activas:
 
@@ -102,7 +102,7 @@ El archivo obtenido es un binario de aproximadamente **12 KB**.
 
 ## Fase 4 — Descifrar `usrconfig_conf`
 
-### 4.1 Obtener `fh-config-utility-windows-x64.exe`
+### 1. Obtener `fh-config-utility-windows-x64.exe`
 
 Para analizar el archivo de configuración se utilizó la herramienta pública:
 
@@ -110,7 +110,7 @@ Para analizar el archivo de configuración se utilizó la herramienta pública:
 
 La herramienta permite trabajar con archivos de configuración de FiberHome y también procesar cadenas individuales.
 
-### 4.2 Descifrar el archivo
+### 2. Descifrar el archivo
 
 Con el archivo `usrconfig_conf` descargado, utilizarás la primera opción de la herramienta que permite descrifrar el archivo, lo que te guardará un nuevo archivo llamado: `usrconfig_conf_DECRYPTED` pero a diferencia del normal este es legible en texto plano
 
@@ -118,7 +118,7 @@ El objetivo de esta fase es localizar el parámetro:
 
 `WebSuperPassword`
 
-### 4.3 Localizar `WebSuperPassword`
+### 3. Localizar `WebSuperPassword`
 
 Dentro del archivo descifrado, buscar:
 
@@ -130,7 +130,7 @@ WebSuperPassword 'A1B2C3D4E5F60718293A4B5C6D7E8F90'
 
 > **Importante:** El valor anterior es completamente ficticio y se utiliza únicamente para explicar el procedimiento. No corresponde al valor real obtenido durante la prueba.
 
-### 4.4 Descifrar el valor
+### 4. Descifrar el valor
 
 `fh-config-utility-windows-x64.exe` también permite descifrar cadenas individuales.
 
@@ -141,7 +141,7 @@ Con la cadena individual encontrada y copiada de `WebSuperPassword`, utilizarás
 
 ---
 
-## 4.5 Verificación del acceso a admin
+## 5. Verificación del acceso a admin
 
 Finalmente, se utilizó la credencial recuperada para iniciar sesión en el panel web mediante la cuenta:
 
