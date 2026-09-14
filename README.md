@@ -2,6 +2,15 @@
 
 Este repositorio documenta un método probado para obtener acceso de administrador en un **FiberHome HG6246R** de Mundo Pacífico (Chile), partiendo de una cuenta básica `user/user1234`.
 
+## Contexto
+
+Anteriormente, algunos equipos FiberHome de Mundo Pacífico utilizaban credenciales administrativas conocidas como `admin/operaciones`.
+
+Actualmente, estas credenciales ya no están disponibles de la misma forma en los equipos provisionados por el ISP. Según lo documentado en investigaciones previas, **TR-069** se utiliza para aprovisionar y gestionar remotamente la configuración del dispositivo, incluyendo las credenciales administrativas.
+
+Las nuevas credenciales no son visibles públicamente. Por ello, en lugar de depender de las credenciales administrativas conocidas anteriormente, este método parte de una cuenta básica `user/user1234` y aprovecha la exposición de la configuración para recuperar el valor utilizado por la cuenta administrativa.
+
+
 La prueba se realizó sobre un dispositivo con:
 
 * **Modelo:** FiberHome HG6246R
