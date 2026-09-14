@@ -28,7 +28,7 @@
 ### 1.1 Configurar Burp
 
 1. Abrir Burp Suite.
-2. Ir a `Proxy → Options → Proxy Listeners`.
+2. Ir a `Proxy → Settings → Proxy Listeners`.
 3. Verificar que escucha en `127.0.0.1:8080`.
 4. Ir a `Proxy → Intercept` y dejar **Intercept is off**.
 5. Abrir el navegador de Burp (`Proxy → Intercept → Open browser`).
