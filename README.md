@@ -32,7 +32,7 @@ El archivo puede ser procesado con una herramienta pública de análisis de conf
 
 WebSuperPassword
 
-Durante la prueba, el valor almacenado en este parámetro pudo ser procesado para recuperar la contraseña utilizada por la cuenta administrativa.
+Durante la prueba, el valor almacenado en este parámetro pudo ser procesado para recuperar la contraseña utilizada por la cuenta de admin.
 
 Finalmente, la credencial recuperada permitió iniciar sesión mediante la cuenta `admin` y obtener acceso a las funciones administrativas del router.
 
@@ -43,7 +43,7 @@ La cadena observada durante la prueba está compuesta por varios problemas:
 1. **Controles de privilegios en el frontend:** determinadas funciones de administración dependen de valores recibidos por el cliente, que pueden ser modificados antes de llegar al navegador.
 2. **Exposición del archivo de configuración:** una cuenta básica puede llegar a visualizar y utilizar la función de descarga de `usrconfig_conf`.
 3. **Secreto administrativo recuperable:** el archivo de configuración contiene `WebSuperPassword` en una forma que puede ser procesada para recuperar la credencial.
-4. **Acceso administrativo:** la credencial recuperada funciona para iniciar sesión mediante la cuenta `admin`.
+4. **Acceso a admin:** la credencial recuperada funciona para iniciar sesión mediante la cuenta `admin`.
 
 El problema principal no es simplemente que un usuario pueda visualizar menús administrativos. El impacto aparece cuando la manipulación de la interfaz permite llegar al archivo de configuración que contiene información sensible utilizada por la cuenta administrativa.
 
