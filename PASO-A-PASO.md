@@ -50,7 +50,7 @@
 
 ### 2.1 Añadir 3 reglas cada una en Match and Replace
 
-En Burp: `Proxy → Options → Match and Replace` → **Add**.
+En Burp: `Proxy → Match and Replace` → **Add**.
 
 **Regla 1:**
 
